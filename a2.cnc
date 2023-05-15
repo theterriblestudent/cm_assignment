@@ -1,62 +1,23 @@
-“$AddRegPart 1, 20, 20” ;
-ReadTasEmbeddedTool” ;
-G90 ;
-G92 X20 Y20 Z45 ;
-G21 ;
-M06 T27 ;
-M03 S4000 ;
-F250 ;
-
-G01 X10 Y75 ; Engraving starts
-G01 Z-5 ;
-G03 X140 Y75 I65 J0 ;
-X10 Y75 I-65 J0 ;
-G01 Z0 ;
-G00 X35 Y74 ;
-G01 Z-5
-Y81
-X41.5 ;
-G02 X108.5 Y81 I34.5 J4.5 ;
-G01 X120 Y80 ;
-G01 Y75 ;
-G01 X35 ;
-G01 ZO ;
-G00 X69 ;
-G00 Y75 ;
-G01 Z-5 ;
-G01 Y66.5
-X72.5 ;
-G01 X72.5 Y30.5
-X77.5
-Y66.5 ;
-G01 X82.5
-Y75 ;
-MO5 ;
-
-M06 T64 ; Drilling Starts
-M03 S4000 ;
-G00 X5 Y5 ;G
-G01 Z-45;
-G01 Z0;
-G00 X145;
-G01 Z-45;
-G01 Z0;
-G00 Y145;
-G01 Z-45;
-G01 Z0;
-G00 X5 ;
-G01 Z-45;
-G01 Z0;
-M05 ;
-
-T27 M06 ; Chamfering Starts
-MO3 S4000 F250 ; 
-G00 X4 Y-10 ;
-G01 Z-4 ;
-G01 Y146
-X146
-Y4
-X0;
-
-G00 X0 Y0 Z0;
-M30;
+$AddRegPart 1    ;
+M03 S600         ;
+T01 M06          ;
+G21              ;
+G00 X00 Z64
+X24              ;
+G03 X48 Z52 R12  ;
+G01 X40 Z48      ;
+G02 X24 Z40 R8   ;
+G01 Z20          ;
+G02 X32 Z16 R4   ;
+G03 X48 Z8 R8    ;
+G01 Z00          ;
+G00 X52 Z0
+Z64 X00          ;
+M05              ;
+T19 M06          ;
+M03 S600         ;
+G00 X0 Z64       ;
+G01 X0 Z40       ;
+G01 X0 Z64       ;
+M05              ;
+M30              ;
